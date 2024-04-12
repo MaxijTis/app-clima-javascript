@@ -1,11 +1,7 @@
 let api_key = '3f10485cf6803331ed706484022d2931';
-//https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
-//api.openweathermap.org/data/3.0/onecall?lat=38.8&lon=12.09&callback=test
 let difKelvin = 273.15
 let urlBase= 'https://api.openweathermap.org/data/2.5/weather'
-
 let ciudad = 'Paris'
-
 
 document.getElementById('botonBusqueda').addEventListener('click', () => {
     const ciudad = document.getElementById('ciudadEntrada').value
@@ -30,7 +26,6 @@ function mostrarDatosClima(data){
     const temperatura = data.main.temp
     const humedad = data.main.humidity
     const descripcion = data.weather[0].description
-
     const ciudadTitulo = document.createElement('h2')
     ciudadTitulo.textContent = `${ciudadNombre}, ${paisNombre}`
 
@@ -47,8 +42,4 @@ function mostrarDatosClima(data){
     divDatosClima.appendChild(temperaturaInfo)
     divDatosClima.appendChild(humedadInfo)
     divDatosClima.appendChild(descripcionInfo)
-
-
-
-
 }
