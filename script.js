@@ -26,11 +26,12 @@ function mostrarDatosClima(data){
     divDatosClima.innerHTML=''
 
     const ciudadNombre = data.name
+    const paisNombre = data.sys.country
     const temperatura = data.main.temp
     const descripcion = data.weather[0].description
 
     const ciudadTitulo = document.createElement('h2')
-    ciudadTitulo.textContent = ciudadNombre
+    ciudadTitulo.textContent = `${ciudadNombre}, ${paisNombre}`
 
     const temperaturaInfo = document.createElement('p')
     temperaturaInfo.textContent = `La temperatura es: ${Math.floor(temperatura-difKelvin)} °C`
